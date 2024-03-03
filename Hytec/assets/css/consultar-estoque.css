@@ -1,0 +1,32 @@
+
+@media(max-width:412px) {
+	#container{
+		margin: 0px !important;
+		border-radius: 0px !important;
+	}
+}
+.container {
+	width: 1024px;
+	padding: 2em;
+}
+
+.bold-blue {
+	font-weight: bold;
+	color: #0277BD;
+}
+
+select option:checked {
+	background-color: lightblue;
+	color: white;
+  }
+  
+
+  select option:hover {
+	background-color: lightgray;
+  }
+  
+
+/* CSS para alinhar o texto dentro do controle de seleção */
+.filter-control {
+    text-align: center; /* Você pode usar 'left', 'right' ou 'center' conforme desejado */
+}

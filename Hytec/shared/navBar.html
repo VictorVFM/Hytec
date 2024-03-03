@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid px-5 mx-3">
+        <a class="navbar-brand text-warning" href="cadastro-cliente.php"><img id="logo" src="assets/img/Logo.png"
+                class="rounded mx-auto d-block" alt="..."></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end d-flex flex-row justify-content-end bg-dark" tabindex="-1"
+            id="navbarTogglerDemo02">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">HyTec</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <ul class="navbar-nav mb-2 mb-lg-0 mx-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle bg-warning text-dark mx-3 rounded-3 fw-bold" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cadastros
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li class="d-flex align-items-center me-2 "><a class="dropdown-item text-warning"
+                                href="cadastro-cliente.php">Cadastrar Cliente</a>
+                        </li>
+                        <li class="d-flex align-items-center me-2"><a class="dropdown-item text-warning"
+                                href="cadastro-peca.php">Cadastrar Peça</a></li>
+                        <li class="d-flex align-items-center me-2"><a class="dropdown-item text-warning"
+                                href="cadastro-tecnico.php">Cadastrar Tecnico</a></li>
+                        <li class="d-flex align-items-center me-2"><a class="dropdown-item text-warning"
+                                href="cadastro-fornecedor.php">Cadastrar Fornecedor</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle bg-warning text-dark rounded-3 mx-3 fw-bold"
+                        href="consultar-estoque.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Consultas
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item text-warning" href="consultar-estoque.php">Consultar Estoque</a>
+                        </li>
+                        <li><a class="dropdown-item text-warning" href="consultar-agendamentos.php">Consultar
+                                Agendamentos</a></li>
+
+                        <li><a class="dropdown-item text-warning" href="consultar-cliente.php">Consultar
+                                Clientes</a></li>
+                        <li><a class="dropdown-item text-warning" href="consultar-fornecedor.php">Consultar
+                                Fornecedores</a></li>
+                        <li><a class="dropdown-item text-warning" href="consultar-tecnico.php">Consultar
+                                Técnicos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle bg-warning text-dark mx-3 rounded-3 fw-bold" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Notas de Serviço
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li class="d-flex align-items-center me-2 "><a class="dropdown-item text-warning"
+                                href="nota-servico.php">Incluir nota</a>
+                        </li>
+                        <li class="d-flex align-items-center me-2 "><a class="dropdown-item text-warning"
+                                href="consultar-nota.php">Consultar nota</a>
+                        </li>
+
+                    </ul>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle bg-warning text-dark rounded-3 mx-3 fw-bold"
+                        href="consultar-estoque.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Perfil
+                    </a>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item text-warning" href="index.php">Sair</a></li>
+                    </ul>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
