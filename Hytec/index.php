@@ -33,13 +33,13 @@
           <span class="btn btn-outline-secondary d-flex align-items-center" type="button" id="show-hide"><i class="fa-solid fa-eye-slash" id="iconPassword" style="color: #ffffff;"></i></span>
 
         </div>
-        <?php
+      <?php
         if (isset($_GET["erro"]) && $_GET["erro"] == 404) {
           echo '<div class="form-floating mt-3 mb-3">
                 <div class="alert alert-danger" role="alert">Email ou senha incorretos.<br> Tente novamente.</div>
               </div>';
         }
-        ?>
+        ?> 
         <div class="d-flex justify-content-center">
           <button type="submit" class="btn btn-lg btn-warning m-2 text-dark px-5 m-5 fw-bold">Entrar</button>
         </div>

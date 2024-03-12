@@ -18,7 +18,7 @@ function ativarModal() {
 }
 
 async function consultarEventos() {
-  let url = "http://localhost:8000/backend/consultar-agendamentos.php";
+  let url = "http://localhost:5001/backend/consultar-agendamentos.php";
   let eventos = [];
 
   const response = await fetch(url).then((r) => r.json());
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const id = info.event.groupId
 
         // Cria uma URL para a rota de exclusão
-        const url = `http://localhost:8000/backend/consultar-agendamentos.php`;
+        const url = `http://localhost:5001/backend/consultar-agendamentos.php`;
 
         // Envia uma requisição DELETE para a API
         

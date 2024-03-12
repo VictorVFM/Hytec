@@ -26,7 +26,7 @@
                         <div class="d-flex justify-content-center">
                             <div class="mb-3 w-100">
                                 <label for="recipient-name" class="col-form-label">Nome do evento:</label>
-                                <input type="text" class="form-control" id="recipient-name" name="nomeEvento">
+                                <input type="text" class="form-control" id="recipient-name" name="nomeEvento" required>
                             </div>
                         </div>
 
@@ -34,26 +34,26 @@
 
                             <div class="mb-3 mx-2 w-50">
                                 <label for="recipient-name" class="col-form-label">Data Inicial:</label>
-                                <input type="date" class="form-control" id="recipient-name" name="dataInicial">
+                                <input type="date" class="form-control" id="recipient-name" name="dataInicial" required>
                             </div>
                             <div class="mb-3 mx-2 w-50">
                                 <label for="recipient-name" class="col-form-label">Data Final:</label>
-                                <input type="date" class="form-control" id="recipient-name" name="dataFinal">
+                                <input type="date" class="form-control" id="recipient-name" name="dataFinal" required>
                             </div>
                         </div>
                         <div class="d-flex justify-content-center">
                             <div class="mb-3 mx-2 w-50">
                                 <label for="recipient-name" class="col-form-label">Hora Inicial:</label>
-                                <input type="time" class="form-control input-hora" id="recipient-name" name="horaInicial">
+                                <input type="time" class="form-control input-hora" id="recipient-name" name="horaInicial" disabled>
                             </div>
                             <div class="mb-3 mx-2 w-50">
                                 <label for="recipient-name" class="col-form-label">Hora Final:</label>
-                                <input type="time" class="form-control input-hora" id="recipient-name" name="horaFinal">
+                                <input type="time" class="form-control input-hora" id="recipient-name" name="horaFinal" disabled>
                             </div>
                         </div>
                         <div class="form-check form-switch form-check-reverse">
-                            <input class="form-check-input" type="checkbox" id="check-dia-inteiro">
-                            <label class="form-check-label" for="flexSwitchCheckReverse" name="diaInteiro">Dia Inteiro</label>
+                            <input class="form-check-input" type="checkbox" id="check-dia-inteiro" name="diaInteiro" checked>
+                            <label class="form-check-label" for="flexSwitchCheckReverse">Dia Inteiro</label>
                         </div>
                         <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

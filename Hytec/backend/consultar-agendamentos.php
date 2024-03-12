@@ -17,17 +17,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nomeEvento"];
     $dataInicial = $_POST["dataInicial"];
     $dataFinal = $_POST["dataFinal"];
-    $horaInicial = $_POST["horaInicial"];
-    $horaFinal = $_POST["horaFinal"];
+    $diaInteiro = $_POST["diaInteiro"];
+    if(!$diaInteiro){
+        $horaInicial = $_POST["horaInicial"];
+        $horaFinal = $_POST["horaFinal"];
+        $dataHoraInicial = $dataInicial.' ' . $horaInicial.':00';
+        $dataHoraFinal = $dataFinal .' '. $horaFinal.':00';
+    }
+    $dataHoraInicial = $dataInicial.' ' . '00'.':00';
+    $dataHoraFinal = $dataFinal .' '. '00'.':00';
 
-    $dataHoraInicial = $dataInicial.' ' . $horaInicial.':00';
-    $dataHoraFinal = $dataFinal .' '. $horaFinal.':00';
+    
 
     if ($stmt->execute()) {    
     header("Location: ../consultar-agendamentos.php");
-    echo "Cliente cadastrado com sucesso!";
+
     } else {
-    echo "Erro ao cadastrar o cliente: " . $stmt->error;
+
     }
 
     $stmt->close();

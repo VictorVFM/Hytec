@@ -23,7 +23,7 @@
 		die("Erro na conexão: " . $con->connect_error);
 	}
 
-	$sql = "SELECT * FROM peca,fornecedor WHERE peca.id_Fornecedor = fornecedor.id ;";
+	$sql = "SELECT * FROM peca,fornecedor WHERE peca.id_Fornecedor = fornecedor.id;";
 
 
 	$result = $con->query($sql);
@@ -66,7 +66,7 @@
                                         $id = $row['id']; 
                                         $nome = $row['nome']; 
 										$quantidade = $row['quantidade']; 
-										$fornecedor = $row['fornecedor']; 
+										$fornecedor = $row['id_Fornecedor']; 
 										$precoUnitario = $row['precoUnitario']; 
 										$razaoSocial = $row['razaoSocial'];
 
