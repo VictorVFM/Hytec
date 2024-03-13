@@ -69,6 +69,7 @@ function adicionarEventosSelect() {
 }
 async function clicarNota(element){
 let id = element.dataset.id
+console.log(id)
 buscarDados(id).then(data =>{
 selectCliente.value = data.clienteID
 inputCnpj.value = data.cnpj
@@ -95,7 +96,7 @@ ativarModal()
 
 
 async function fetchData() {
-  const url = "http://localhost:8000/backend/peca.php";
+  const url = "http://localhost:50001/backend/peca.php";
   let result = fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -163,7 +164,7 @@ document.getElementById('btn-imprimir').addEventListener('click', function() {
 });
 
 async function buscarDados(id){
-const url = 'http://localhost:8000/backend/nota-servico.php?id='+id
+const url = 'http://localhost:5001/backend/nota-servico.php?id='+id
 let response = await fetch(url)
 .then(r => r.json())
 let data = await response
