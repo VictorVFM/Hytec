@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Dados do cliente
     $razaoSocial = $_POST["razaoSocial"];
     $nomeFantasia = $_POST["nomeFantasia"];
-    $dataFundacao = $_POST["dataFundacao"];
+    $dataFundacao = converterData($_POST["dataFundacao"]); 
     $cnpj = $_POST["cnpj"];
     $telefone = $_POST["telefone"];
     $email = $_POST["email"];
@@ -87,7 +87,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 
 
 
+function converterData($data) {
 
+    $partes = explode('/', $data);
+    
+   
+    $data_formatada = $partes[2] . '-' . $partes[1] . '-' . $partes[0];
+    
+    return $data_formatada;
+}
 
 
 
