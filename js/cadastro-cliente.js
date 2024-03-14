@@ -31,13 +31,20 @@ async function buscar() {
 
 
 async function carregarEndereço() {
-  buscar().then(data => {
-    console.log(data)
-    inputLogradouro.value = data.logradouro
-    inputBairro.value = data.bairro
-    inputCidade.value = data.localidade
-    selectEstado.value = data.uf
+  buscar()
+  .then(data => {
+    if(!data.erro){
+      inputLogradouro.value = data.logradouro;
+      inputBairro.value = data.bairro;
+      inputCidade.value = data.localidade;
+      selectEstado.value = data.uf;
+    }
+    
   })
+  .catch(error => {
+    console.error(`Erro ao buscar endereço: ${error}`);
+    // Não faça nada em caso de erro
+  });
 }
 
 
