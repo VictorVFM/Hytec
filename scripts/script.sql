@@ -7,7 +7,7 @@ CREATE TABLE cliente(
 id INT(4) AUTO_INCREMENT PRIMARY KEY,
 razaoSocial VARCHAR(50) NOT NULL,
 nomeFantasia VARCHAR(50) NOT NULL,
-dataFundacao Date NOT NULL,
+dataFundacao DATE NOT NULL,
 cnpj VARCHAR(18) NOT NULL UNIQUE,
 email VARCHAR(50) NOT NULL UNIQUE,
 telefone VARCHAR(15) NOT NULL UNIQUE
@@ -44,8 +44,8 @@ CREATE TABLE tecnico(
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 nome VARCHAR(50) NOT NULL,
 cpf VARCHAR(20) NOT NULL UNIQUE,
-email VARCHAR(50) NOT NULL UNIQUE,
-senha VARCHAR(50) NOT NULL
+dataNascimento DATE NOT NULL,
+email VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE notaservico(
@@ -95,11 +95,11 @@ senha VARCHAR(50) NOT NULL
 
 INSERT INTO usuario (nome,email,senha) VALUES ("Admin","admin@gmail.com","123456");
 
-INSERT INTO tecnico (nome, cpf, email, senha) VALUES ('João Silva', '123.456.789-10', 'joao@example.com', 'senha123');
-INSERT INTO tecnico (nome, cpf, email, senha) VALUES ('Maria Santos', '987.654.321-00', 'maria@example.com', 'senha456');
-INSERT INTO tecnico (nome, cpf, email, senha) VALUES ('Pedro Oliveira', '111.222.333-44', 'pedro@example.com', 'senha789');
-INSERT INTO tecnico (nome, cpf, email, senha) VALUES ('Ana Souza', '555.666.777-88', 'ana@example.com', 'senha101112');
-INSERT INTO tecnico (nome, cpf, email, senha) VALUES ('Luiz Pereira', '999.888.777-66', 'luiz@example.com', 'senha131415');
+INSERT INTO tecnico (nome, cpf, dataNascimento, email) VALUES ('João Silva', '123.456.789-10','2000-05-16' ,'joao@example.com');
+INSERT INTO tecnico (nome, cpf, dataNascimento, email) VALUES ('Maria Santos', '987.654.321-00','1980-06-19' ,'maria@example.com');
+INSERT INTO tecnico (nome, cpf, dataNascimento, email) VALUES ('Pedro Oliveira', '111.222.333-44','1994-01-03' ,'pedro@example.com');
+INSERT INTO tecnico (nome, cpf, dataNascimento, email) VALUES ('Ana Souza', '555.666.777-88','1975-07-13' ,'ana@example.com');
+INSERT INTO tecnico (nome, cpf, dataNascimento, email) VALUES ('Luiz Pereira', '999.888.777-66','1989-04-30' ,'luiz@example.com');
 
 
 INSERT INTO fornecedor (razaoSocial, cnpj, telefone) VALUES ('Peças Empilhadeira Ltda.', '12.345.678/9012-34', '(11) 1234-5678');
@@ -145,5 +145,4 @@ INSERT INTO evento (nome, dataInicial, dataFinal) VALUES ('Convenção de Saúde
 INSERT INTO evento (nome, dataInicial, dataFinal) VALUES ('Festival de Música', '2024-12-15 16:30:00', '2024-12-17 23:00:00');
 INSERT INTO evento (nome, dataInicial, dataFinal) VALUES ('Feira de Livros', '2025-01-20 10:00:00', '2025-01-22 18:30:00');
 INSERT INTO evento (nome, dataInicial, dataFinal) VALUES ('Encontro de Gastronomia', '2025-02-25 12:15:00', '2025-02-26 15:45:00');
-
 
