@@ -7,7 +7,7 @@ if ($con->connect_error) {
 
 
 function ultimoPedido($con){
-    $sql =  "SELECT * FROM notaservico WHERE ano = 2023 ORDER BY id DESC LIMIT 1;";
+    $sql =  "SELECT * FROM notaservico WHERE ano = YEAR(CURRENT_DATE()) ORDER BY id DESC LIMIT 1;";
     // Execute a consulta
     $result = $con->query($sql);
 
@@ -33,8 +33,9 @@ function criarNotaServico($con, $data) {
   $sql = "INSERT INTO notaservico (id, ano, id_Cliente,dataNota,horario,id_Tecnico,valorTotal,observacoes)
    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
   $stmt = $con->prepare($sql);
-  // Inserimos os dados
-  $stmt->bind_param("iiissiis",ultimoPedido($con),$date->format("Y"),$data["id_Cliente"],$data["dataNota"],$data["horario"],$data["id_Tecnico"],$data["valorTotal"],$data["observacoes"]);
+  $ultimoPedido = ultimoPedido($con);
+  $ano = $date->format("Y");
+  $stmt->bind_param("iiissiis",$ultimoPedido,$ano,$data["id_Cliente"],$data["dataNota"],$data["horario"],$data["id_Tecnico"],$data["valorTotal"],$data["observacoes"]);
   // Executamos a consulta
   $stmt->execute();
   
@@ -45,7 +46,7 @@ function criarNotaServico($con, $data) {
   $stmt = $con->prepare($sql);
   $id_Peca = $data["id_Peca"][$i];
   $id_qtdPeca = $data["quantidade"][$i];
-  echo $id_notaServico;
+
   $stmt->bind_param("iii", $id_Peca,$id_notaServico,$id_qtdPeca);
   $stmt->execute();
   }
@@ -178,8 +179,7 @@ function handle_request($con, $method, $path, $data) {
     case "POST":
       // Criamos um novo registro
       criarNotaServico($con, $data);     
-      header("Location: ../nota-servico.php?register");
-
+      header("Location:../nota-servico.php?register");
     case "PUT":
       // Atualizamos um registro existente
       $id = $path[2];
@@ -229,7 +229,4 @@ $data = $_POST;
 
 // Chamamos a função para tratar a requisição
 $response = handle_request($con, $method, $path, $data);
-
-
-
 ?>

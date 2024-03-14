@@ -34,7 +34,7 @@
     $date = new DateTime();
     $sql4 = "SELECT id,ano
     FROM notaservico
-    WHERE ano = 2023
+    WHERE ano = YEAR(CURRENT_DATE())
     ORDER BY id DESC
     LIMIT 1;";
 
@@ -54,7 +54,7 @@
         }
     }else{
         $nServico = 1 . $date->format("Y");
-        $id = 1;   
+          
     }
 
 
