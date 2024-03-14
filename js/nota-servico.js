@@ -27,7 +27,7 @@ function habilitarAnimacao() {
 
 selectCliente.addEventListener("change", async function () {
   let id = selectCliente.value;
-  const apiUrl = "http://localhost:8000/backend/cliente.php?id=" + id;
+  const apiUrl = "http://localhost:5001/backend/cliente.php?id=" + id;
   await fetch(apiUrl)
     .then((response) => {
       return response.json();
@@ -54,7 +54,7 @@ selectCliente.addEventListener("change", async function () {
 async function fetchData() {
   // URL do endpoint
   // URL do endpoint
-  const url = "http://localhost:8000/backend/peca.php";
+  const url = "http://localhost:5001/backend/peca.php";
 
   // Realiza uma requisição GET
   let result = fetch(url)

@@ -62,13 +62,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
-    $id = $_GET['id'];
+
+
+
+function converterData($data) {
+
+    $partes = explode('/', $data);
     
+   
+    $data_formatada = $partes[2] . '-' . $partes[1] . '-' . $partes[0];
+    
+    return $data_formatada;
+}
+
+
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {    
+    $id = $_GET['id'];    
     $sql = "SELECT cliente.*, endereco.id AS enderecoID, endereco.* FROM cliente, endereco WHERE cliente.id = $id AND endereco.id_Cliente = $id;";
-
-    
-
+    $stmt = $con->prepare($sql);
     $result = $con->query($sql);
 
 
@@ -87,28 +101,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 
 
 
-function converterData($data) {
-
-    $partes = explode('/', $data);
-    
-   
-    $data_formatada = $partes[2] . '-' . $partes[1] . '-' . $partes[0];
-    
-    return $data_formatada;
-}
 
 
 
-
-
-
-
-
-
-
-
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-
+if ($_SERVER["REQUEST_METHOD"] == "GET" && !isset($_GET['id'])) {
+    $con = new mysqli($DB_HOSTNAME, $DB_USERNAME, $DB_PASSWORD, $DB_DATABASE);
     $sql = "SELECT * FROM cliente";
 
     // Execute a consulta
@@ -132,8 +129,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         echo "Nenhum resultado encontrado.";
     }
 
-    // Feche a conexão com o banco de dados
-    $con->close();
 }
 
 ?>

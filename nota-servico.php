@@ -54,7 +54,7 @@
         }
     }else{
         $nServico = 1 . $date->format("Y");
-           
+        $id = 1;   
     }
 
 
