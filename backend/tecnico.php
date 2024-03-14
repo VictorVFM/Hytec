@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpf = $_POST["cpf"];
     $dataNascimento = $_POST["dataNascimento"];
     $email = $_POST["email"];
-    echo $email;
+
 
     $sql = "INSERT INTO tecnico(nome, cpf, dataNascimento, email) VALUES (?, ?, ?, ?)";
     $stmt = $con->prepare($sql);

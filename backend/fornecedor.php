@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = $_POST["telefone"];
 
 
-    $sql = "INSERT INTO Fornecedor(razaoSocial, cnpj, telefone) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO fornecedor(razaoSocial, cnpj, telefone) VALUES (?, ?, ?)";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("sss", $razaoSocial, $cnpj, $telefone);
     $stmt->execute();
